@@ -1,0 +1,16 @@
+{
+  "name": "code-review",
+  "version": "1.0.0",
+  "description": "Static analysis and code quality review for TypeScript/JavaScript files",
+  "entry": "index.ts",
+  "dependencies": {},
+  "files": [
+    "index.ts",
+    "rules.ts",
+    "types.ts",
+    "README.md"
+  ],
+  "tags": ["review", "quality", "lint", "static-analysis"],
+  "author": "Agent Skills",
+  "license": "MIT"
+}

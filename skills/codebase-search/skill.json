@@ -1,0 +1,15 @@
+{
+  "name": "codebase-search",
+  "version": "1.0.0",
+  "description": "Fast recursive file search with regex support, context lines, and result grouping",
+  "entry": "index.ts",
+  "dependencies": {},
+  "files": [
+    "index.ts",
+    "types.ts",
+    "README.md"
+  ],
+  "tags": ["search", "analysis", "utility", "filesystem"],
+  "author": "Agent Skills",
+  "license": "MIT"
+}
