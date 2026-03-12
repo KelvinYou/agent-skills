@@ -1,0 +1,20 @@
+{
+  "name": "resume-review",
+  "version": "1.0.0",
+  "description": "AI-powered resume review skill that analyzes resumes from multiple hiring perspectives. Works for any profession — software engineering, HR, accounting, marketing, healthcare, and more.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@types/node": "^25.4.0",
+    "mammoth": "^1.11.0",
+    "pdf-parse": "^2.4.5",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
+  }
+}

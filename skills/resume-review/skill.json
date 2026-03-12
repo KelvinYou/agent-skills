@@ -1,0 +1,23 @@
+{
+  "name": "resume-review",
+  "version": "1.0.0",
+  "description": "AI-powered resume review with HR and senior hiring manager perspectives",
+  "entry": "index.ts",
+  "dependencies": {
+    "pdf-parse": "^1.1.1",
+    "mammoth": "^1.8.0"
+  },
+  "files": [
+    "index.ts",
+    "types.ts",
+    "parsers/pdf.ts",
+    "parsers/docx.ts",
+    "parsers/text.ts",
+    "prompts/hr-manager.ts",
+    "prompts/senior-engineer.ts",
+    "README.md"
+  ],
+  "tags": ["resume", "review", "hr", "hiring", "career", "ats"],
+  "author": "Agent Skills",
+  "license": "MIT"
+}
