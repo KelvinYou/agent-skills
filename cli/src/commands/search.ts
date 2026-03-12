@@ -13,8 +13,7 @@ export async function searchCommand(
 
   let repoPath: string;
   try {
-    const { fetchRepo: fetch } = await import('../utils/github.js');
-    repoPath = await fetch(repoUrl, {
+    repoPath = await fetchRepo(repoUrl, {
       branch: options.branch,
       token: options.token,
       skipCache: false,

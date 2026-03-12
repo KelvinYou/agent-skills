@@ -1,5 +1,6 @@
 import * as path from 'path';
 import chalk from 'chalk';
+import fs from 'fs-extra';
 import ora from 'ora';
 import { fetchRepo, listAvailableSkills } from '../utils/github.js';
 import { readSkillManifest, installSkill, getSkillInstallPath } from '../utils/skills.js';
@@ -110,9 +111,8 @@ async function installOne(
 
     // Verify skill exists in repo
     const skillSourceDir = path.join(repoPath, 'skills', skillName);
-    const { default: fsExtra } = await import('fs-extra');
 
-    if (!(await fsExtra.pathExists(skillSourceDir))) {
+    if (!(await fs.pathExists(skillSourceDir))) {
       const available = await listAvailableSkills(repoPath);
       throw new Error(
         `Skill "${skillName}" not found in repository.\n` +

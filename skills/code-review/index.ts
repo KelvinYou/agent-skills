@@ -26,7 +26,7 @@ export type { CodeReviewOptions, CodeReviewResult, Issue, RuleDefinition };
 export { defaultRules as rules };
 
 const DEFAULT_EXTENSIONS = ['.ts', '.tsx', '.js', '.jsx', '.mjs', '.cjs'];
-const IGNORE = ['node_modules', '.git', 'dist', 'build', '.next', 'coverage'];
+const IGNORE = new Set(['node_modules', '.git', 'dist', 'build', '.next', 'coverage']);
 
 // ─── Public API ───────────────────────────────────────────────────────────────
 
@@ -159,7 +159,7 @@ function collectFiles(
 function walk(
   dir: string,
   extensions: string[],
-  ignore: string[],
+  ignore: Set<string>,
   visitor: (f: string) => void,
 ): void {
   let entries: fs.Dirent[];
@@ -170,7 +170,7 @@ function walk(
   }
 
   for (const entry of entries) {
-    if (ignore.includes(entry.name)) continue;
+    if (ignore.has(entry.name)) continue;
     const full = path.join(dir, entry.name);
     if (entry.isDirectory()) {
       walk(full, extensions, ignore, visitor);

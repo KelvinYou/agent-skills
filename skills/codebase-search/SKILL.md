@@ -10,17 +10,21 @@ Fast recursive file search with regex support, context lines, and result groupin
 ## Usage
 
 ```typescript
-import { searchCodebase } from '.agent/skills/codebase-search/index.js';
+import { searchCodebase, formatResults } from '.agent/skills/codebase-search/index.js';
 
-const results = await searchCodebase({
+const result = await searchCodebase({
   pattern: 'function\\s+\\w+',
   directory: 'src/',
   contextLines: 2,
 });
 
-for (const match of results) {
+// Structured data
+for (const match of result.matches) {
   console.log(`${match.file}:${match.line} ${match.content}`);
 }
+
+// Or pretty-print to stdout
+console.log(formatResults(result));
 ```
 
 ## Features

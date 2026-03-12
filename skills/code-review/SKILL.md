@@ -10,15 +10,15 @@ Static analysis and code quality review for TypeScript/JavaScript files. Runs a 
 ## Usage
 
 ```typescript
-import { reviewFiles } from '.agent/skills/code-review/index.js';
+import { reviewCode, formatCodeReview } from '.agent/skills/code-review/index.js';
 
-const results = await reviewFiles({
-  paths: ['src/'],
-});
+const result = await reviewCode({ target: './src' });
 
-for (const finding of results) {
-  console.log(`${finding.file}:${finding.line} [${finding.severity}] ${finding.message}`);
-}
+// Structured data
+console.log(`Passed: ${result.passed}, Issues: ${result.totalIssues}`);
+
+// Or pretty-print to stdout
+console.log(formatCodeReview(result));
 ```
 
 ## What it checks
