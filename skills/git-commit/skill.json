@@ -1,0 +1,16 @@
+{
+  "name": "git-commit",
+  "version": "1.0.0",
+  "description": "Generate and validate Conventional Commits messages from staged git changes",
+  "entry": "index.ts",
+  "dependencies": {},
+  "files": [
+    "index.ts",
+    "rules.ts",
+    "types.ts",
+    "README.md"
+  ],
+  "tags": ["git", "commit", "conventional-commits", "lint", "workflow"],
+  "author": "Agent Skills",
+  "license": "MIT"
+}
